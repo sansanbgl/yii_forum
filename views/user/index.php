@@ -7,10 +7,10 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\User2Search */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'User2s';
+$this->title = 'Users';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user2-index">
+<div class="user-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>

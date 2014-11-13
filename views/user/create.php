@@ -17,5 +17,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
+    <?php 
+    	$this->widget('CChaptcha');
+    	echo '<br>';
+    	echo Chtml::activeTextField($model, 'verifyCode')
+    ?>
 
 </div>

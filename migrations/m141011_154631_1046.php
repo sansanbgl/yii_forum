@@ -23,6 +23,19 @@ class m141011_154631_1046 extends Migration
             'email_user' => 'VARCHAR(50)',
             'level_id' => 'INT',
         ));
+        $this->createTable('{{%user_default}}', [
+            'id' => Schema::TYPE_PK,
+            'username' => Schema::TYPE_STRING . ' NOT NULL',
+            'auth_key' => Schema::TYPE_STRING . '(32) NOT NULL',
+            'password_hash' => Schema::TYPE_STRING . ' NOT NULL',
+            'password_reset_token' => Schema::TYPE_STRING,
+            'email' => Schema::TYPE_STRING . ' NOT NULL',
+            'role' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 10',
+            'status' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 10',
+            'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
+            'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
+        ]);
+
         $this->createTable('level', array(
             'id_level' => 'INT PRIMARY KEY AUTO_INCREMENT',
             'name_level' => 'VARCHAR(50)',
@@ -74,5 +87,6 @@ class m141011_154631_1046 extends Migration
         $this->dropTable('category');
         $this->dropTable('threadstar');
         $this->dropTable('news');
+        $this->dropTable('user_default');
     }
 }
